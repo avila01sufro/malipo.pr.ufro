@@ -19,24 +19,20 @@ public class ProductoService {
 
 
     public Producto guardarProducto(Producto producto) {
-        return null;
+        return repositorio.save(producto);
     }
-
-
 
     public Producto obtenerProducto(Long id) {
-        return null;
+        return repositorio.findById(id).get();
     }
-
 
 
     public Producto actualizarProducto(Producto producto) {
-        return null;
+        return repositorio.save(producto);
     }
 
 
-
     public void eliminarProducto(Long id) {
-
+        repositorio.deleteById(id);
     }
 }

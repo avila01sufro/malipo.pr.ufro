@@ -49,8 +49,8 @@
             <td th:text="${producto.valor}">Valor</td>
             <td th:text="${producto.stock}">Stock</td>
             <td>
-                <a th:href="@{/estudiantes/editar/{id}(id=${producto.id})}" class="btn btn-info">Editar</a>
-                <a th:href="@{/estudiantes/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{listado/editar/{id}(id=${producto.id})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/listado/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>

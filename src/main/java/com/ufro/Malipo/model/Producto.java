@@ -21,7 +21,7 @@ public class Producto {
     private String nombre;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria",nullable = false)
+    @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
     @Column(name = "valor",nullable = false)
@@ -30,17 +30,20 @@ public class Producto {
     @Column(name = "stock",nullable = false)
     private int stock;
 
+    @Column(name = "imagen",nullable = false)
+    private String imagen;
+
     public Producto(){
 
     }
 
-    public Producto(Long id, String nombre, Categoria categoria, int valor, int stock) {
-        super();
+    public Producto(Long id, String nombre, Categoria categoria, int valor, int stock, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.valor = valor;
         this.stock = stock;
+        this.imagen = imagen;
     }
 
     public Producto(String nombre, Categoria categoria, int valor, int stock) {
@@ -91,6 +94,14 @@ public class Producto {
         this.stock = stock;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
@@ -99,6 +110,7 @@ public class Producto {
                 ", categoria=" + categoria +
                 ", valor=" + valor +
                 ", stock=" + stock +
+                ", imagen='" + imagen + '\'' +
                 '}';
     }
 }

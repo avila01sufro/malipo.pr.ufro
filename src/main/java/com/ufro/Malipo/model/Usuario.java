@@ -1,6 +1,5 @@
 package com.ufro.Malipo.model;
 
-
 import javax.persistence.*;
 import java.util.Collection;
 

@@ -14,7 +14,7 @@ public class Categoria {
     private String tipo;
 
     public Categoria(){
-
+        super();
     }
 
     public Categoria(Long id, String tipo) {

@@ -22,34 +22,44 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class="text-center">Registro de instrumentos</h1>
+            <div>
+                <h1 th:if="${producto.id == null}">Registro de Instrumentos</h1>
+                <h1 th:unless="${producto.id == null}">Editar instrumento</h1>
+            </div>
             <div class="card-body">
-                <form th:action="@{/listado}" th:object="${producto}"  method="POST">
+                <form th:action="@{/listado}" th:object="${producto}" method="POST">
+                    <input type="hidden" th:field="*{id}" th:value="${producto.id}"/>
                     <div class="form-group">
                         <label>Nombre: </label>
-                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite el nombre: " required>
+                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite el nombre " required>
                     </div>
 
-                    <label>Categoria: </label>
-                    <div class="btn-group">
-                        <button class="btn btn-default btn-xs dropdown-toggle"
-                                type="button" data-toggle="dropdown">
-                            Seleccione la categoria <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" th:field="*{categoria}">
-                            <li><a th:text="*{categoria.id}">Acción #1</a></li>
-
-                        </ul>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-4">Categoria:</label>
+                        <div class="col-sm-8">
+                            <select th:field="*{categoria}" class="form-control" required>
+                                <th:block th:each="categoria : ${listaCategorias}">
+                                    <option th:text="${categoria.tipo}" th:value="${categoria.id}"></option>
+                                </th:block>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label>Valor: </label>
-                        <input type="number" name="valor" th:field="*{valor}" class="form-control" placeholder="Ingrese el valor: " required>
+                        <input type="number" min="0" name="valor" th:field="*{valor}" class="form-control" placeholder="Ingrese el valor: " required>
                     </div>
 
                     <div class="form-group">
                         <label>Stock: </label>
-                        <input type="number" name="stock" th:field="*{stock}" class="form-control" placeholder="Ingrese el stock: " required>
+                        <input type="number" min="0" name="stock" th:field="*{stock}" class="form-control" placeholder="Ingrese el stock: " required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Imagen:</label>
+                        <div class="col-sm-10">
+                            <input type="file" th:field="*{imagen}" class="form-control-file" id="img" name="img" required>
+                        </div>
                     </div>
 
                     <div class="box-footer">
