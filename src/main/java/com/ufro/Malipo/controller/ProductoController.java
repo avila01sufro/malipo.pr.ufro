@@ -66,5 +66,4 @@ public class ProductoController {
         productoService.eliminarProducto(id);
         return "redirect:/listado";
     }
-
 }

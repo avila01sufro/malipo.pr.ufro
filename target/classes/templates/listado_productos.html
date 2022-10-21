@@ -2,7 +2,7 @@
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Malipo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,7 +19,7 @@
         </div>
     </nav>
 </header>
-
+<br>
 <div class="container">
     <div class="row">
         <h1>Gestion de Instrumentos</h1>
@@ -39,6 +39,7 @@
             <th>Valor</th>
             <th>Stock</th>
             <th>Acciones</th>
+
         </tr>
         </thead>
         <tbody>
@@ -49,8 +50,8 @@
             <td th:text="${producto.valor}">Valor</td>
             <td th:text="${producto.stock}">Stock</td>
             <td>
-                <a th:href="@{/estudiantes/editar/{id}(id=${producto.id})}" class="btn btn-info">Editar</a>
-                <a th:href="@{/estudiantes/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{listado/editar/{id}(id=${producto.id})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/listado/{id}(id=${producto.id})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>

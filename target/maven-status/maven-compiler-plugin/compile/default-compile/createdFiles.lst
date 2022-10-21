@@ -1,1 +1,11 @@
+com\ufro\Malipo\model\Usuario.class
+com\ufro\Malipo\controller\PaginaController.class
+com\ufro\Malipo\service\CategoriaService.class
+com\ufro\Malipo\controller\ProductoController.class
+com\ufro\Malipo\model\Categoria.class
+com\ufro\Malipo\model\Rol.class
+com\ufro\Malipo\repository\ProductoRepository.class
 com\ufro\Malipo\MalipoApplication.class
+com\ufro\Malipo\model\Producto.class
+com\ufro\Malipo\service\ProductoService.class
+com\ufro\Malipo\repository\CategoriaRepository.class
